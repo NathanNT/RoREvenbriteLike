@@ -86,7 +86,7 @@ GEM
       railties (>= 3.2, < 6.1)
     erubi (1.9.0)
     execjs (2.7.0)
-    faker (2.6.0)
+    faker (2.7.0)
       i18n (>= 1.6, < 1.8)
     ffi (1.11.1)
     font-awesome-sass (5.11.2)
