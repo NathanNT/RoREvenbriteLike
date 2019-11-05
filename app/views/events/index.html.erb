@@ -1,0 +1,36 @@
+<% content_for :title, "Buy Tickets for Events and Shows" %>
+
+<div class="jumbotron border-top border-dark text-center shadow-lg">
+	<h1 class="display-4">Bienvenue sur eventbrite</h1>
+	<p class="lead">Eventbrite est une plateforme qui permet aux organisateurs d'événements de planifier, promouvoir et vendre des billets pour des événements !</p>
+	<hr class="my-4">
+	<p>Ajoutez votre propre évenement !</p>
+	<p class="lead">
+		<a class="btn btn-primary btn-lg" href="#" role="button">Organise un évenement dans ta ville !</a>
+	</p>
+</div>
+
+<div class="container">
+	<div class="row text-center">
+		<% @events.each do |event| %>
+		<%= link_to event do %>
+		<div class="col-lg-3 col-md-6 mb-4">
+			<div class="card h-100">
+				<img class="card-img-top" src="http://placehold.it/500x325" alt="">
+				<div class="card-body">
+					<h4 class="card-title"><%= event.title %></h4>
+					<p class="card-text"><%= event.location %> | <%= event.start_date.strftime("%B %d, %Y")%></p>
+				</div>
+				<div class="card-footer">
+					<%= link_to "Buy Now", new_attendance_path , class: "btn btn-danger text-white" %>
+				</div>
+			</div>
+		</div>
+	<% end %>
+	<% end %>
+	</div>
+
+</div>
+
+
+

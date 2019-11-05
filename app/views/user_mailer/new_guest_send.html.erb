@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hello  <%= @admin.first_name %> !</h1>
+    <p>
+     You have a new guest for  <%= @attendance.event.title %> happening on the <%= @attendance.event.start_date.strftime("%d/%m/%Y") %>.
+    </p>
+    <p>
+      The new guest is <%= @attendance.user.first_name %>.
+    </p>
+    <p> Thanks for using Pop Events
+  </body>
+</html>

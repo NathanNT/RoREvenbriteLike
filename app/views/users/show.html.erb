@@ -1,0 +1,64 @@
+<% content_for :title, @user.first_name+"' Page" %>
+
+<!-- Junbotron User -->
+
+<div class="jumbotron">
+  <h1 class="display-4">User's Profile : <%= @user.first_name %></h1>
+
+</div>
+
+
+<!-- Profile info -->
+
+<div class ='align-middle'>
+  <div class="card mt-5 ml-5 mr-5 p-4">
+    <div class="card-body">
+      <h5 class="card-title"><%= @user.first_name %> <%= @user.last_name %></h5>
+      <p class="card-title"><strong>Bio : </strong><%= @user.description %></p>
+      <p class="card-title"><strong>Mail : </strong> <%= @user.email %></p>
+      <p class="card-title"><strong>Profile created on : </strong><%= @user.created_at.strftime("%d/%m/%Y") %></p>
+      <p class="card-text"> <strong>Last update on : </strong><%= @user.updated_at.strftime("%d/%m/%Y") %></p>
+    </div>
+  </div>
+</div>
+
+<!-- Events AS admin -->
+<% if @admin %>
+  <% @admin_events.each do |event| %>
+        <%= link_to event do %>
+          <div class= "col-sm m-2 text-center" >
+            <div class="card" style="width: 18rem; text-decoration: none;">
+                <div class="card-body card-event">
+                  <p class="text-info"><%= event.location %></p>
+                  <h5 class="text-info"><%= event.title %></h5>
+                  <p class="text-info"><%= event.start_date.strftime("%B %d, %Y")%></p>
+                    <%= link_to "Buy Now", new_attendance_path , class: "btn btn-danger text-white" %>
+                </div>
+              </div>
+          </div>
+      <% end %>
+    <% end %>
+<% end %>
+
+<!-- Events AS guest -->
+<% if @guest %>
+  <% @guest_events.each do |event| %>
+        <%= link_to event do %>
+          <div class= "col-sm m-2 text-center" >
+            <div class="card" style="width: 18rem; text-decoration: none;">
+                <div class="card-body card-event">
+                  <p class="text-info"><%= event.location %></p>
+                  <h5 class="text-info"><%= event.title %></h5>
+                  <p class="text-info"><%= event.start_date.strftime("%B %d, %Y")%></p>
+                    <%= link_to "Buy Now", new_attendance_path , class: "btn btn-danger text-white" %>
+                </div>
+              </div>
+          </div>
+      <% end %>
+    <% end %>
+<% end %>
+
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

@@ -1,0 +1,8 @@
+Hello  <%= @admin.first_name %> !
+==========================================================
+
+You have a new guest for  <%= @attendance.event.title %> happening on the <%= @attendance.event.start_date.strftime("%d/%m/%Y") %>.
+
+The new guest is <%= @attendance.user.first_name %>.
+
+Thanks for using Pop Events

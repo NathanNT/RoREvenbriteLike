@@ -1,0 +1,30 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <h3> Create a new user !</h3>
+  <div class="row justify-content-center">
+    <p style = "width: 200px"> first_name : <input type="text" name="first_name"></p>
+  </div>
+  <div class="row justify-content-center">
+    <p style = "width: 200px"> last_name : <input type="text" name="last_name"></p>
+  </div>
+  <div class="row justify-content-center">
+    <p style = "width: 200px"> description   : <input type="text" name="description"></p>
+  </div>
+  <div class="row justify-content-center">
+    <p style = "width: 200px"> mail : <input type="mail" name="mail"></p>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
