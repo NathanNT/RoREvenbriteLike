@@ -11,18 +11,18 @@
     </div>
   <% end %>
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <h3> Create a new user !</h3>
-  <div class="row justify-content-center">
-    <p style = "width: 200px"> first_name : <input type="text" name="first_name"></p>
+  <h3> Complete the fields !</h3>
+  <div class="row justify-content-center mt-4 mb-2 ">
+    <p style = "width: 200px"> First name : <input type="text" name="first_name" value="<%= @user.first_name %>"></p>
   </div>
   <div class="row justify-content-center">
-    <p style = "width: 200px"> last_name : <input type="text" name="last_name"></p>
+    <p style = "width: 200px"> Last name : <input type="text" name="last_name" value="<%= @user.last_name %>"></p>
   </div>
   <div class="row justify-content-center">
-    <p style = "width: 200px"> description   : <input type="text" name="description"></p>
+    <p style = "width: 200px"> Description   : <input type="text" name="description" value="<%= @user.description %>"></p>
   </div>
   <div class="row justify-content-center">
-    <p style = "width: 200px"> mail : <input type="mail" name="mail"></p>
+    <p style = "width: 200px"> E-mail : <input type="mail" name="mail" value="<%= @user.email %>"></p>
   </div>
   <div class="actions">
     <%= form.submit %>

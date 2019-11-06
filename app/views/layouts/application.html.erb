@@ -25,9 +25,12 @@
   </head>
 
   <body>
+
+
+    
     <!-- NAVBAR  --> 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
-      <%= link_to "EventBrite", root_path   , class: "navbar-brand" %>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <%= link_to "Pop Events", root_path   , class: "navbar-brand" %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -36,9 +39,15 @@
         <ul class="navbar-nav mr-auto">
           <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Créer un évenement", new_event_path, class: "navbar-brand" %>
+            <%= link_to "Create an Event", new_event_path, class: "navbar-brand" %>
           </li>
           <% end %>
+          <li class="nav-item">
+            <%= link_to "Team", teams_path, class: "navbar-brand" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Contact us", contacts_path, class: "navbar-brand" %>
+          </li>
         </ul>
         <ul class="navbar-nav ">
           <% if user_signed_in? %>
@@ -56,13 +65,12 @@
       </div>
     </nav>
 
-    <!-- FLASH MESSAGES -->
+        <!-- FLASH MESSAGES -->
 
     <% flash.each do |key, value| %>
       <%= content_tag :div, value, class: "alert-#{key}" %>
     <% end %>
-
-
+    
 
     <%= yield %>
   </body>

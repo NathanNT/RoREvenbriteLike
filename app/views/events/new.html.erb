@@ -1,56 +1,7 @@
-
-<div class="body-blue">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card card-signin my-5 border-blue">
-          <div class="card-body">
-            <%= form_for @event do |f| %>
-              <% if @event.errors.any? %>
-                <div class="alert alert-danger">
-                    <div id="error_explanation">
-                        <p> <%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</p>   
-                            <ul>
-                                <% @event.errors.full_messages.each do |message| %>
-                                    <li><%= message %></li>              
-                                <% end %>
-                            </ul>
-                    </div>
-                </div>
-              <% end %>
-              <h1 class="h3 mb-3 font-weight-normal text-center"> Modifier un evenement </h1>
-              <div class="form-group">
-                <%= f.label :title, "Titre" %>
-                <%= f.text_field :title, autocomplete: "title", class: "form-control" %>
-              </div>
-              <div class="form-group">
-                <%= f.label :description, "Description" %><br />
-                <%= f.text_field :description, autocomplete: "description", class: "form-control" %>
-              </div>
-              <div class="form-group">
-                <%= f.label :location, "Addresse" %><br />
-                <%= f.text_field :location, autocomplete: "location", class: "form-control" %>
-              </div>
-              <div class="form-group">
-                <%= f.label :price, "Prix" %><br />
-                <%= f.number_field :price, autocomplete: "price", class: "form-control" %>
-              </div>
-              <div class="form-group">
-                <%= f.label :start_date, "Date et heure de l'evenement" %>
-                <%= f.datetime_field :start_date, autocomplete: "start_date", class: "form-control" %>
-
-              </div>
-              <div class="form-group">
-                <%= f.label :duration, "Duree de l'evenement" %><br />
-                <%= f.number_field :duration, autocomplete: "duration", class: "form-control" %>
-              </div>
-              <div class="actions mt-5 mb-4">
-                <%= f.submit "Modifier l'evenement", class:"btn btn-md btn-primary btn-block text-uppercase" %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<% content_for :title, "Create a new Event" %>
+<div class="text-center mt-5">
+	<h1>New Event</h1>
+	<p>Create a new Event !</p>
 </div>
+<%= render 'form', event: @event %>
+

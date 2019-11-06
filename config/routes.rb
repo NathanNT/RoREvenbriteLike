@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'home#index'
-  resources :event
+  resources :attendances
+  resources :events
+  resources :users
+  resources :teams, only: [:index]
+  resources :contacts, only: [:index]
+  root 'events#index'
 end

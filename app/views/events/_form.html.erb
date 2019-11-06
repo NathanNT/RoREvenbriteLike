@@ -1,0 +1,35 @@
+<%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <div class="row justify-content-center mt-4 mb-2 ">
+    <p style = "width: 400px"> Title : <input style="width:400px; height:30px" type="text" name="title" value="<%= @event.title %>"></p>
+  </div>
+  <div class="row justify-content-center m-2">
+    <p style = "width: 400px"> Description   : <input style="width:400px; height:30px" type="text" name="description" value="<%= @event.description %>"></p>
+  </div>
+  <div class="row justify-content-center m-2">
+    <p style = "width: 400px"> Location : <input style="width:400px; height:30px" type="text" name="location" value="<%= @event.location %>"></p>
+  </div>
+  <div class="row justify-content-center m-2">
+    <p style = "width: 400px"> Price : <input style="width:400px; height:30px" type="number" name="price" value="<%= @event.price %>"></p>
+  </div>
+  <div class="row justify-content-center m-2">
+    <p style = "width: 400px"> Start Date format : ('YYYY-MM-DD HH:mm:ss') <input style="width:400px; height:30px" type="datetime" name="start_date" value="<%= @event.start_date %>"></p>
+  </div>
+  <div class="row justify-content-center m-2">
+    <p style = "width: 400px">Duration (must be a multiple of 5): <input style="width:400px; height:30px" type="number" name="duration" value="<%= @event.duration %>"></p>
+  </div>
+  <div class="actions text-center mt-5">
+    <%= form.submit %>
+  </div>
+<% end %>
