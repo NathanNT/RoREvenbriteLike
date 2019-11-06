@@ -1,8 +1,3 @@
-# THP - Week 6 - Project 1 - Eventbrite : introduction et backend
-# Francois THIOUNN 
-
-# Notes & Use :
-
 - hosted on heroku at : https://cryptic-beach-34552.herokuapp.com/events/new
 -
 -
