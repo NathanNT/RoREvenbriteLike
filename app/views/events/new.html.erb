@@ -1,7 +1,27 @@
-<% content_for :title, "Create a new Event" %>
-<div class="text-center mt-5">
-	<h1>New Event</h1>
-	<p>Create a new Event !</p>
-</div>
-<%= render 'form', event: @event %>
+<%= form_tag url_for(action: 'create'), method: "post" do %>
+      </ul>
+    </div>
 
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <div class="row justify-content-center mt-4 mb-2 ">
+    <p style = "width: 400px"> Title : <input style="width:400px; height:30px" type="text" name="title"></p>
+  </div>
+  <div class="row justify-content-center m-2">
+    <p style = "width: 400px"> Description   : <input style="width:400px; height:30px" type="text" name="description" ></p>
+  </div>
+  <div class="row justify-content-center m-2">
+    <p style = "width: 400px"> Location : <input style="width:400px; height:30px" type="text" name="location"></p>
+  </div>
+  <div class="row justify-content-center m-2">
+    <p style = "width: 400px"> Price : <input style="width:400px; height:30px" type="number" name="price"></p>
+  </div>
+  <div class="row justify-content-center m-2">
+    <p style = "width: 400px"> Start Date format : ('YYYY-MM-DD HH:mm:ss') <input style="width:400px; height:30px" type="datetime" name="start_date"></p>
+  </div>
+  <div class="row justify-content-center m-2">
+    <p style = "width: 400px">Duration (must be a multiple of 5): <input style="width:400px; height:30px" type="number" name="duration"></p>
+  </div>
+  <div class="actions text-center mt-5">
+ <button type="submit" name="commit" class="btn btn-primary mb-5">Submit</button>
+  </div>
+  <% end %>
