@@ -1,6 +1,20 @@
-<% content_for :title, "Register" %>
-
-<h1>Create your Account !</h1>
-
-<%= render 'form', user: @user %>
-
+<%= form_tag url_for(action: 'create'), method: "post" do %>
+ 
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <h3> Complete the fields !</h3>
+  <div class="row justify-content-center mt-4 mb-2 ">
+    <p style = "width: 200px"> First name : <input type="text" name="first_name" value="<%= @user.first_name %>"></p>
+  </div>
+  <div class="row justify-content-center">
+    <p style = "width: 200px"> Last name : <input type="text" name="last_name" value="<%= @user.last_name %>"></p>
+  </div>
+  <div class="row justify-content-center">
+    <p style = "width: 200px"> Description   : <input type="text" name="description" value="<%= @user.description %>"></p>
+  </div>
+  <div class="row justify-content-center">
+    <p style = "width: 200px"> E-mail : <input type="mail" name="mail" value="<%= @user.email %>"></p>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
