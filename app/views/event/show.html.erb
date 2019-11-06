@@ -1,6 +1,0 @@
-<p id="notice"><%= notice %></p>
-<h1><%=Event.find(params[:id].to_i).title%> </h1>
-<p><%=Event.find(params[:id].to_i).description%> </p>
-<p><%=Event.find(params[:id].to_i).duration%> minutes </p>
-<p><%= link_to 'Edit', edit_event_path(@event) %> |
-<p><%= link_to 'Back', event_path %>

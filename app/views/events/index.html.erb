@@ -20,25 +20,12 @@
     <header class="jumbotron background border shadow-lg my-4 rounded">
       <h1 class="h1-responsive text-center"> <br> Participe à un évenement dans <br> ta ville ! <br> <br></h1>
       <p class="lead border-bottom pb-3">Eventbrite est une plateforme qui permet aux organisateurs d'événements de planifier, promouvoir et vendre des billets pour des événements.</p>
-      <a href="#" class="btn btn-primary btn-lg mt-3">Ajouter un évenement !</a>
+      <a href="/events/new" class="btn btn-primary btn-lg mt-3">Ajouter un évenement !</a>
     </header>
 
 
     <div class="row text-center">
-<%Event.all.each do |event|%>
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title"><%=event.title%></h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-          </div>
-<%= link_to "Rejoindre", new_attendance_path , class: "btn btn-dark text-white m-2" %>
-          <div class="card-footer">
-          </div>
-        </div>
-      </div>
-<%end%>
+
     
 
     </div>
