@@ -6,7 +6,6 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     #figure out how to find a featured event and what it is
-    @event = Event.find(1)
   end
 
   # GET /events/1
