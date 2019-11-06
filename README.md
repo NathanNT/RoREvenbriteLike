@@ -3,7 +3,7 @@
 
 # Notes & Use :
 
-- hosted on heroku at : https://shrouded-dawn-29894.herokuapp.com/
+- hosted on heroku at : https://cryptic-beach-34552.herokuapp.com/events/new
 -
 -
 
